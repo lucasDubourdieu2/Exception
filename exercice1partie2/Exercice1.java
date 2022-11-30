@@ -2,20 +2,20 @@ package exercice1partie2;
 
 import java.lang.Exception;
 
-public class exercice1 {
+public class Exercice1 {
 
-  public void insererTableau(int valeur, int indice, int[] tableau) {
+  public static int[] insererTableau(int valeur, int indice, int[] tableau) {
    try  {
      int[] nouveau = new int[tableau.length + 1];
-     for (int i = 0; i < tableau.length; i++ ) {
+     for (int i = 0; i < indice; i++ ) {
        nouveau[i] = tableau[i];
      }
-     tableau[indice] = valeur;
+     nouveau[indice] = valeur;
 
      for (int i = indice; i < tableau.length; i++) {
        nouveau[i + 1] = tableau[i];
      }
-     tableau = nouveau;
+     return nouveau;
    } catch (ArrayIndexOutOfBoundsException e) {
       e.printStackTrace();
       throw e;
